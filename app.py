@@ -1,6 +1,9 @@
 from flask import Flask
+import hashlib
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Hello, Anumala Kiran!"
+    surname="anumala"
+    result=hashlib.sha256(surname.encode())
+    return "Hello,".result
